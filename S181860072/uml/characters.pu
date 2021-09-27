@@ -1,0 +1,17 @@
+@startuml characters
+
+class Sorter{
+    load()
+    sort()
+    getPlan()
+}
+
+class BubbleSorter{
+    int[] a
+    swap()
+    String plan
+}
+
+BubbleSorter --|> Sorter
+
+@enduml
