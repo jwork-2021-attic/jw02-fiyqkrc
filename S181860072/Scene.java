@@ -1,4 +1,4 @@
-package example;
+package S181860072;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -9,17 +9,17 @@ public class Scene {
     public static void main(String[] args) throws IOException {
 
         Line line = new Line(7);
-        line.put(Gourd.ONE, 1);
+        line.put(Gourd.ONE, 6);
         line.put(Gourd.TWO, 3);
-        line.put(Gourd.THREE, 2);
+        line.put(Gourd.THREE, 1);
         line.put(Gourd.FOUR, 5);
-        line.put(Gourd.FIVE, 6);
-        line.put(Gourd.SIX, 0);
-        line.put(Gourd.SEVEN, 4);
+        line.put(Gourd.FIVE, 2);
+        line.put(Gourd.SIX, 4);
+        line.put(Gourd.SEVEN, 0);
 
         Geezer theGeezer = Geezer.getTheGeezer();
 
-        Sorter sorter = new BubbleSorter();
+        Sorter sorter = new SelectSorter();
 
         theGeezer.setSorter(sorter);
 
