@@ -9,7 +9,7 @@ import java.util.Random;
 public class Scene {
 
     public static void main(String[] args) throws IOException {
-        int length=50;
+        int length=256;
         Line line = new Line(length);
         Scene.createMonsters(line,length);
 
