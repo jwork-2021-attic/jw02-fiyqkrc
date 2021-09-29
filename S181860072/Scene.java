@@ -9,13 +9,13 @@ public class Scene {
     public static void main(String[] args) throws IOException {
 
         Line line = new Line(7);
-        line.put(Gourd.ONE, 6);
-        line.put(Gourd.TWO, 3);
-        line.put(Gourd.THREE, 1);
-        line.put(Gourd.FOUR, 5);
-        line.put(Gourd.FIVE, 2);
-        line.put(Gourd.SIX, 4);
-        line.put(Gourd.SEVEN, 0);
+        line.put(new Monster(12,23,34), 6);
+        line.put(new Monster(12, 78, 128), 3);
+        line.put(new Monster(78, 23, 17), 1);
+        line.put(new Monster(178, 23, 17), 5);
+        line.put(new Monster(78, 123, 17), 2);
+        line.put(new Monster(78, 23, 117), 4);
+        line.put(new Monster(78, 93, 17), 0);
 
         Geezer theGeezer = Geezer.getTheGeezer();
 

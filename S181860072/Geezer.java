@@ -58,8 +58,8 @@ public class Geezer {
 
     private void execute(String step) {
         String[] couple = step.split("<->");
-        Gourd.getGourdByRank(Integer.parseInt(couple[0]))
-                .swapPosition(Gourd.getGourdByRank(Integer.parseInt(couple[1])));
+        Monster.getMonsterByRank(Integer.parseInt(couple[0]))
+                .swapPosition(Monster.getMonsterByRank(Integer.parseInt(couple[1])));
     }
 
 }
