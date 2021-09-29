@@ -1,0 +1,72 @@
+@startuml characters
+
+interface Sorter{
+    load()
+    sort()
+    getPlan()
+}
+
+class QuickSorter{
+    int[] a
+    swap()
+    String plan
+}
+
+class SelectSorter{
+    int[] a
+    swap()
+    String plan
+}
+
+class Line{
+    Position[] positions
+    put()
+    toString()
+    get()
+    toArray()
+}
+
+class Position{
+    Linable linable
+    setLinable()
+}
+
+interface Linable{
+    setPosition()
+    getPosition()
+    getValue()
+}
+
+class Monster{
+    int r
+    int g
+    int b 
+    int rank 
+    List monsters
+    int rankCount
+    Position position
+    getMonsterByRank()
+    rank()
+    toString()
+    swapPosition()
+}
+
+class Snake{
+    Snake theSnake
+    getTheSnake()
+    Sorter sorter 
+    setSorter()
+    lineUp()
+    parsePlan()
+    execute()
+}
+
+QuickSorter ..|> Sorter :implement
+SelectSorter ..|> Sorter
+Monster ..|> Linable
+Position --* Line :contained
+Position --* Monster
+Sorter --* Snake
+Linable --* Position
+
+@enduml
