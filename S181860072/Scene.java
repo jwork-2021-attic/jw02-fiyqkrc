@@ -9,13 +9,13 @@ import java.util.Random;
 public class Scene {
 
     public static void main(String[] args) throws IOException {
-        int length=512;
+        int length=50;
         Line line = new Line(length);
         Scene.createMonsters(line,length);
 
         Snake theSnake = Snake.getTheSnake();
 
-        Sorter sorter = new SelectSorter();
+        Sorter sorter = new QuickSorter();
 
         theSnake.setSorter(sorter);
 

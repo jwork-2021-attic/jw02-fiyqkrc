@@ -15,18 +15,44 @@ public class QuickSorter implements Sorter {
 
     @Override
     public void sort() {
-        int start = 0;
-        while (start < a.length - 1) {
-            int maxIndex = start;
-            for (int i = start; i < a.length; i++) {
-                if (a[i] < a[maxIndex]) {
-                    maxIndex = i;
+        quickSortExeute(0, a.length-1);
+    }
+
+    private void quickSortExeute(int left,int right){
+        if(right-left<1){
+            return;
+        }
+        else{
+            int pointer = left;
+            int aim=right;
+            while(pointer!=aim){
+                if(pointer<aim){
+                    if(a[pointer]>a[aim]){
+                        swap(pointer, aim);
+                        int temp=pointer;
+                        pointer=aim;
+                        aim=temp;
+                        aim++;
+                    }
+                    else{
+                        aim--;
+                    }
+                }
+                else{
+                    if(a[pointer]<a[aim]){
+                        swap(pointer, aim);
+                        int temp=pointer;
+                        pointer=aim;
+                        aim=temp;
+                        aim--;
+                    }
+                    else{
+                        aim++;
+                    }
                 }
             }
-            if (maxIndex != start) {
-                swap(maxIndex, start);
-            }
-            start++;
+            quickSortExeute(left, pointer-1);
+            quickSortExeute(pointer+1, right);
         }
     }
 
