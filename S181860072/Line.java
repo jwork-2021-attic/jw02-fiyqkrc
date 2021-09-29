@@ -1,5 +1,7 @@
 package S181860072;
 
+import java.lang.Math;
+
 public class Line {
 
     public Line(int length) {
@@ -41,8 +43,15 @@ public class Line {
     @Override
     public String toString() {
         String lineString = "\t";
+        int itemOneLine=(int)Math.ceil(Math.sqrt(this.positions.length));
+        int count=0;
         for (Position p : positions) {
             lineString += p.linable.toString();
+            count++;
+            if(count==itemOneLine){
+                lineString+="\n\t";
+                count=0;
+            }
         }
         return lineString;
     }
