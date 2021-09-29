@@ -1,0 +1,23 @@
+@startuml timeline
+create line
+Scene -[#Gold]> line:new
+line -[#Red]> Gourd.ONE : put in position 1
+line -[#Red]> Gourd.TWO : put in position 3
+line -[#Red]> Gourd.THREE : put in position 2
+line -[#Red]> Gourd.FOUR : put in position 5
+line -[#Red]> Gourd.FIVE : put in position 6
+line -[#Red]> Gourd.SIX : put in position 0
+line -[#Red]> Gourd.SEVEN : put in position 4
+create theGeezer
+Scene -[#Gold]> theGeezer:new
+create sorter
+Scene -[#Gold]> sorter:new
+theGeezer -[#Pink]> sorter: setSorter
+theGeezer -[#Blue]> line: lineUp
+theGeezer -[#Blue]> log:stroage
+create writer
+Scene -[#Gold]> writer:new
+writer -[#Gray]> log: write
+writer -[#Green]> writer:flush
+writer -[#Green]> writer:close
+@enduml
