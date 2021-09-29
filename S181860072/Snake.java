@@ -1,17 +1,16 @@
 package S181860072;
 
-public class Geezer {
+public class Snake {
+    private static Snake theSnake;
 
-    private static Geezer theGeezer;
-
-    public static Geezer getTheGeezer() {
-        if (theGeezer == null) {
-            theGeezer = new Geezer();
+    public static Snake getTheSnake() {
+        if (theSnake == null) {
+            theSnake = new Snake();
         }
-        return theGeezer;
+        return theSnake;
     }
 
-    private Geezer() {
+    private Snake() {
 
     }
 
@@ -61,5 +60,4 @@ public class Geezer {
         Monster.getMonsterByRank(Integer.parseInt(couple[0]))
                 .swapPosition(Monster.getMonsterByRank(Integer.parseInt(couple[1])));
     }
-
 }
